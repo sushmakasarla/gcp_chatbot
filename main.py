@@ -54,6 +54,7 @@ ChatWindowHTMLFirst = """
     <html>
       <title>College Enquiry Chatbot</title>
       <body>
+      <div style="width:500px;margin: auto;border: 1px solid black;padding:10px">
         <form {{url_for('chatbotsystem')}} method="POST">
           <h1>College Inquiry Chabot</h1>
           <div class="icon">
@@ -79,6 +80,7 @@ ChatWindowHTMLLast = """
            <a href='/endchat' align='center'">End Chat</a>
     	</div>
         </form>
+        </div>
       </body>
     </html>
     """
@@ -128,6 +130,7 @@ EndChatHTMLFirst="""
 <html>
   <title>Session Closed</title>
   <body>
+  <div style="width:500px;margin: auto;border: 1px solid black;padding:10px">
     <form>
       <h1>Chat Session Closed</h1>
       <div class="icon">
@@ -142,6 +145,7 @@ EndChatHTMLLast="""
  </div>
 	</div>
     </form>
+    </div>
   </body>
 </html>
 """
@@ -153,6 +157,7 @@ def endchat():
         <html>
           <title>College Enquiry Chabot</title>
           <body>
+          <div style="width:500px;margin: auto;border: 1px solid black;padding:10px">
             <form {{url_for('chatbotsystem')}} method="POST">
               <h1>College Enquiry Chabot</h1>
               <div class="formcontainer">
