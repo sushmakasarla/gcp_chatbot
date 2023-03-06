@@ -2,7 +2,7 @@ import sqlite3
 
 from flask import Flask, request, g, render_template, send_file
 
-DATABASE ='tmp\chatbot.db'
+DATABASE ='/tmp/chatbot.db'
 app = Flask(__name__)
 app.config.from_object(__name__)
 
@@ -52,85 +52,7 @@ def startinquiry():
 ChatWindowHTMLFirst = """
     <!DOCTYPE html>
     <html>
-      <title>college inquiry Chabot</title>
-      <head>
-        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
-        <style>
-          html, body {
-          display: flex;
-          justify-content: center;
-          font-family: Roboto, Arial, sans-serif;
-          font-size: 15px;
-          }
-          form {
-          border: 5px solid #f1f1f1;
-          }
-          input[type=text], input[type=password] {
-          width: 100%;
-          padding: 16px 8px;
-          margin: 8px 0;
-          display: inline-block;
-          border: 1px solid #ccc;
-          box-sizing: border-box;
-          }
-          .icon {
-          font-size: 110px;
-          display: flex;
-          justify-content: center;
-          color: #4286f4;
-          }
-          .send-button {
-          background-color: #4286f4;
-          color: white;
-          padding: 12px 0;
-          margin: 10px 0;
-          border: none;
-          cursor: grab;
-          width: 12%;
-          }
-    	.end-button {
-            background-color: #FF0000;
-            color: white;
-            padding: 4px 0;
-            margin: 2px 0;
-            border: none;
-            cursor: grab;
-            width: 24%;
-            }
-          h1 {
-          text-align:center;
-          fone-size:18;
-          }
-          button:hover {
-          opacity: 0.8;
-          }
-          .formcontainer {
-          text-align: center;
-          margin: 24px 50px 12px;
-          }
-    	.text-box {
-      	font-size: 16px;
-     	 display: flex;
-     	 width: 100%;
-    	}
-          .container {
-          padding: 16px 0;
-          text-align:left;
-          }
-          span.psw {
-          float: right;
-          padding-top: 0;
-          padding-right: 15px;
-          }
-          /* Change styles for span on extra small screens */
-          @media screen and (max-width: 300px) {
-          span.psw {
-          display: block;
-          float: none;
-          }
-        </style>
-      </head>
+      <title>College Enquiry Chatbot</title>
       <body>
         <form {{url_for('chatbotsystem')}} method="POST">
           <h1>College Inquiry Chabot</h1>
@@ -148,11 +70,12 @@ ChatWindowHTMLFirst = """
     """
 
 ChatWindowHTMLLast = """
+    </br>
     </div>
     	<div class="text-box">
             <input type="text" name="question" id="message" autocomplete="off" placeholder="Tye your Questions here">
     	  <input class="send-button" type="submit" value=">">
-          </div>
+          </div></br>
            <a href='/endchat' align='center'">End Chat</a>
     	</div>
         </form>
@@ -204,84 +127,6 @@ EndChatHTMLFirst="""
 <!DOCTYPE html>
 <html>
   <title>Session Closed</title>
-  <head>
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
-    <style>
-      html, body {
-      display: flex;
-      justify-content: center;
-      font-family: Roboto, Arial, sans-serif;
-      font-size: 15px;
-      }
-      form {
-      border: 5px solid #f1f1f1;
-      }
-      input[type=text], input[type=password] {
-      width: 100%;
-      padding: 16px 8px;
-      margin: 8px 0;
-      display: inline-block;
-      border: 1px solid #ccc;
-      box-sizing: border-box;
-      }
-      .icon {
-      font-size: 110px;
-      display: flex;
-      justify-content: center;
-      color: #4286f4;
-      }
-      .send-button {
-      background-color: #4286f4;
-      color: white;
-      padding: 12px 0;
-      margin: 10px 0;
-      border: none;
-      cursor: grab;
-      width: 12%;
-      }
-	.end-button {
-      background-color: #FF0000;
-      color: white;
-      padding: 12px 0;
-      margin: 10px 0;
-      border: none;
-      cursor: grab;
-      width: 12%;
-      }
-      h1 {
-      text-align:center;
-      fone-size:18;
-      }
-      button:hover {
-      opacity: 0.8;
-      }
-      .formcontainer {
-      text-align: center;
-      margin: 24px 50px 12px;
-      }
-	.text-box {
-  	font-size: 16px;
- 	 display: flex;
- 	 width: 100%;
-	}
-      .container {
-      padding: 16px 0;
-      text-align:left;
-      }
-      span.psw {
-      float: right;
-      padding-top: 0;
-      padding-right: 15px;
-      }
-      /* Change styles for span on extra small screens */
-      @media screen and (max-width: 300px) {
-      span.psw {
-      display: block;
-      float: none;
-      }
-    </style>
-  </head>
   <body>
     <form>
       <h1>Chat Session Closed</h1>
@@ -306,91 +151,10 @@ def endchat():
     ChatWindowHTMLFirst = """
         <!DOCTYPE html>
         <html>
-          <title>college inquiry Chabot</title>
-          <head>
-            <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
-            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
-            <style>
-              html, body {
-              display: flex;
-              justify-content: center;
-              font-family: Roboto, Arial, sans-serif;
-              font-size: 15px;
-              }
-              form {
-              border: 5px solid #f1f1f1;
-              }
-              input[type=text], input[type=password] {
-              width: 100%;
-              padding: 16px 8px;
-              margin: 8px 0;
-              display: inline-block;
-              border: 1px solid #ccc;
-              box-sizing: border-box;
-              }
-              .icon {
-              font-size: 110px;
-              display: flex;
-              justify-content: center;
-              color: #4286f4;
-              }
-              .send-button {
-              background-color: #4286f4;
-              color: white;
-              padding: 12px 0;
-              margin: 10px 0;
-              border: none;
-              cursor: grab;
-              width: 12%;
-              }
-        	.end-button {
-                background-color: #FF0000;
-                color: white;
-                padding: 4px 0;
-                margin: 2px 0;
-                border: none;
-                cursor: grab;
-                width: 24%;
-                }
-              h1 {
-              text-align:center;
-              fone-size:18;
-              }
-              button:hover {
-              opacity: 0.8;
-              }
-              .formcontainer {
-              text-align: center;
-              margin: 24px 50px 12px;
-              }
-        	.text-box {
-          	font-size: 16px;
-         	 display: flex;
-         	 width: 100%;
-        	}
-              .container {
-              padding: 16px 0;
-              text-align:left;
-              }
-              span.psw {
-              float: right;
-              padding-top: 0;
-              padding-right: 15px;
-              }
-              /* Change styles for span on extra small screens */
-              @media screen and (max-width: 300px) {
-              span.psw {
-              display: block;
-              float: none;
-              }
-            </style>
-          </head>
+          <title>College Enquiry Chabot</title>
           <body>
             <form {{url_for('chatbotsystem')}} method="POST">
-              <h1>College Inquiry Chabot</h1>
-              <div class="icon">
-        	 <i class="fas fa-user-circle"></i>
-              </div>
+              <h1>College Enquiry Chabot</h1>
               <div class="formcontainer">
               <div class="container">
                <label for="ufname"><strong>Hi!! Welcome to college inquiry portal</strong></label></br></br>
@@ -405,9 +169,9 @@ def endchat():
         for row in result:
             Userdetails=row[0]+","+row[1]+","+row[2]
     EndChatHTMLMiddle="""
-    [User Details]<br>
+    User Details<br>
     <label for="ufname"><strong>"""+Userdetails+"""</strong></label></br></br>
-    [Creator Details]<br>
+    Creator Details<br>
     <label for="ufname"><strong>Sushma, Kasarla, kasarlsd@mail.uc.edu</strong></label></br></br>
     """
     return EndChatHTMLFirst+EndChatHTMLMiddle+EndChatHTMLLast
