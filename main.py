@@ -63,18 +63,18 @@ ChatWindowHTMLFirst = """
           <div class="container">
            <label for="ufname"><strong>Hi!! Welcome to college inquiry portal</strong></label></br></br>
     	  <label for="ufname"><strong>Choose your questions from below list</strong></label></br>
-    	  <label for="ufname"><strong>1.Does the college have a football team?</strong></label></br>
-    	  <label for="ufname"><strong>2.Does it have Computer Science Major?</strong></label></br>
-    	  <label for="ufname"><strong>3.What is the in-state tuition?</strong></label></br>
-    	  <label for="ufname"><strong>4.Does its have on campus housing?</strong></label></br>
+    	  <label for="ufname"><strong>1. Does the college have a football team?</strong></label></br>
+    	  <label for="ufname"><strong>2. Does it have Computer Science Major?</strong></label></br>
+    	  <label for="ufname"><strong>3. What is the in-state tuition?</strong></label></br>
+    	  <label for="ufname"><strong>4. Does its have on campus housing?</strong></label></br>
     """
 
 ChatWindowHTMLLast = """
     </br>
     </div>
     	<div class="text-box">
-            <input type="text" name="question" id="message" autocomplete="off" placeholder="Tye your Questions here">
-    	  <input class="send-button" type="submit" value=">">
+            <input type="text" style="width:300pt;height:50px" name="question" id="message" autocomplete="off" placeholder="Type your Questions here">
+    	  <input class="send-button" style="width:50pt;height:50px" type="submit" value=">">
           </div></br>
            <a href='/endchat' align='center'">End Chat</a>
     	</div>
